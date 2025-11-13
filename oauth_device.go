@@ -66,8 +66,9 @@ func (oa *Flow) DeviceFlow() (*api.AccessToken, error) {
 	}
 
 	return device.Wait(context.TODO(), httpClient, host.TokenURL, device.WaitOptions{
-		ClientID:   oa.ClientID,
-		DeviceCode: code,
+		ClientID:     oa.ClientID,
+		ClientSecret: oa.ClientSecret,
+		DeviceCode:   code,
 	})
 }
 

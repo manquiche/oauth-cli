@@ -68,7 +68,8 @@ func WithAudience(audience string) AuthRequestEditorFn {
 
 // RequestCode initiates the authorization flow by requesting a code from uri.
 func RequestCode(c httpClient, uri string, clientID string, scopes []string,
-	optionalRequestParams ...AuthRequestEditorFn) (*CodeResponse, error) {
+	optionalRequestParams ...AuthRequestEditorFn,
+) (*CodeResponse, error) {
 	values := url.Values{
 		"client_id": {clientID},
 		"scope":     {strings.Join(scopes, " ")},
