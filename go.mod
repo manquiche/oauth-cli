@@ -1,4 +1,4 @@
-module github.com/cli/oauth
+module github.com/manquiche/oauth-cli
 
 go 1.13
 
